@@ -1,0 +1,69 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+
+browser = webdriver.Chrome()
+browser.get("https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession")
+
+
+name = browser.find_element_by_name("identifier")
+name.click()
+name.send_keys("abc@gmail.com")
+
+next = browser.find_element_by_id("identifierNext")
+next.click()
+
+time.sleep(3)
+p = browser.find_element_by_name("password")
+p.click()
+p.send_keys("yourpassword")
+
+next2 = browser.find_element_by_class_name("CwaK9")
+next2.click()
+
+time.sleep(6)
+    
+compose = browser.find_element_by_xpath('//div[@class ="T-I J-J5-Ji T-I-KE L3"]')
+compose.click()
+
+id = browser.find_element_by_class_name("vO")
+id.click()
+id.send_keys("xyz@gmail.com")
+id.send_keys(Keys.ENTER)
+
+body = browser.find_element_by_xpath('//div[@class="Am Al editable LW-avf"]')
+time.sleep(3)
+body.click()
+time.sleep(3)
+body.send_keys("THIS IS THE MAIL")
+time.sleep(3)
+
+send = browser.find_element_by_xpath('//div[@class = "T-I J-J5-Ji aoO T-I-atl L3"]')
+send.click()
+
+time.sleep(6)     
+    
+browser.close()
+    
+
+
+    
+        
+        
+        
+        
+    
+  
+
+        
+        
+
+
+
+
+
+
+
+
+
